@@ -1,0 +1,95 @@
+.Search nav {
+  display: flex;
+  align-items: center;
+  padding: 0.4rem;
+  justify-content: space-between;
+  background-color: #f1f1f1;
+}
+.Search{
+  /* background-color: white; */
+}
+.Search img {
+  width: 1.28rem;
+  cursor: pointer;
+}
+.Search input {
+  width: 70%;
+  cursor: pointer;
+  background: none;
+  padding: 0.8rem;
+  border-radius: 0.17rem;
+  background-color: white;
+  outline: none;
+  border: none;
+}
+.Search .Songs {
+  height: 89.8vh;
+}
+.searchWrapper .kkk .wrapper {
+  margin-left: 0.6rem;
+}
+.Search .kkk {
+  /* height: 100%; */
+  overflow-y: auto;
+  
+}
+/* Dark mode styling */
+.SearchDark nav {
+  display: flex;
+  align-items: center;
+  padding: 0.4rem;
+  justify-content: space-between;
+  background-color: rgb(58, 52, 52);
+}
+.SearchDark{
+  background-color: black;
+  height: 100vh;
+  color: white;
+
+}
+.SearchDark .kkk {
+  /* height: 100%; */
+  overflow-y: auto;
+  background-color: black;
+  color: white;
+}
+.SearchDark img {
+  width: 1.28rem;
+  cursor: pointer;
+}
+.SearchDark input {
+  width: 70%;
+  cursor: pointer;
+  background: none;
+  padding: 0.8rem;
+  color: white;
+  border-radius: 0.17rem;
+  background-color: black;
+  outline: none;
+  border: none;
+}
+.SearchDark .Songs {
+  height: 89.8vh;
+  color: white;
+
+}
+.SearchDark .info:hover {
+  background-color: rgb(58, 52, 52);
+}
+.searchWrapper .kkk .wrapper {
+  margin-left: 0.6rem;
+}
+.SearchDark .kkk {
+  /* height: 100%; */
+  overflow-y: auto;
+}
+
+@media (max-width: 790px) {
+  .Search .Songs {
+    height: 90vh;
+  }
+  .Search input {
+    background: none;
+    padding: 0.1rem 0.4rem;
+  }
+}

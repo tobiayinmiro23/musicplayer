@@ -1,0 +1,88 @@
+.HomePage {
+  height: 100%;
+  margin: 0rem;
+  background-color: white;
+}
+.HomePage .img {
+  height: 2.35rem;
+  width: 2.35rem;
+  margin-right: 0.1rem;
+}
+nav .img {
+  cursor: pointer;
+}
+.HomePage nav {
+  margin: 0rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f1f1f1;
+  color: rgba(0, 0, 0, 0.781);
+  padding: 0.7rem;
+  margin-bottom: 1rem;
+}
+.s-img,
+.p-img {
+  width: 1.1rem;
+  height: 1.1rem;
+  margin-right: .3rem;
+}
+.playlist,
+.songs {
+  display: flex;
+  align-items: center;
+  padding: 0.9rem 0rem;
+  padding-left: 0.7rem;
+  margin: 0.4rem;
+  border-radius: 0.2rem;
+  cursor: pointer;
+}
+.modeContainer{
+  margin:0.4rem 0.9rem;
+
+}
+.playlist:hover,
+.songs:hover {
+  background-color: #faa9f9 ;
+}
+.white{
+  color: white;
+}
+.black{
+  color: black;
+}
+.playlist h2,
+.songs h2 {
+  font-size: 1.22rem;
+}
+.playlist .forward,
+.songs .forward {
+  width: 0.67rem;
+  margin-left: auto;
+  margin-right: 1rem;
+  color: rgba(0, 0, 0, 0.804);
+
+}
+/* Darkmode styling */
+.HomePageDark .img {
+  height: 2.35rem;
+  width: 2.35rem;
+  margin-right: 0.1rem;
+}
+.HomePageDark{
+  background-color: black;
+  height: 100vh;
+}
+.HomePageDark h2{
+  color: white;
+}
+.HomePageDark nav {
+  margin: 0rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: rgb(58, 52, 52);
+  padding: 0.7rem;
+  margin-bottom: 1rem;
+}

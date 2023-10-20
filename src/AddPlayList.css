@@ -1,0 +1,109 @@
+.PlayList nav {
+  display: flex;
+  align-items: center;
+  padding: 0.6rem;
+  margin-bottom: 1rem;
+  background-color: #f1f1f1;
+}
+.PlayList{
+  background-color: white;
+}
+.PlayList img {
+  width: 1.28rem;
+}
+.PlayList nav h1 {
+  margin-left: 1.5rem;
+}
+.PlayList .AddPlaylist {
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+  cursor: pointer;
+  padding-bottom: 2rem;
+}
+.white{
+  color: #f1f1f1;
+}
+.black{
+  color: black;
+}
+.AddPlaylist .addWrapper {
+  width: fit-content;
+  height: fit-content;
+  border-radius: 0.12rem;
+  margin-right: 0.3rem;
+  background-color:#f1f1f1;
+}
+main .playlistsContainer{
+  margin-left: 2rem;
+  /* margin-top: 1.7rem; */
+}
+main .playlistsContainer .img{
+  width: 3rem;
+  height: 3rem;
+  background: linear-gradient(
+    to top right,
+    #faa9f9,
+    rgba(250, 169, 249, 0.569)
+  );
+}
+.AddPlaylist h3:hover{
+  color:  #faa9f9;
+}
+main .playlistsContainer .playlistSongs{
+  display: flex;
+  align-items: flex-start;
+  margin: 1rem 0rem;
+  cursor: pointer;
+  width: 100%;
+  height: fit-content;
+  padding: 0.3rem;
+}
+main .playlistsContainer .playlistSongsDetails{
+  display: flex;
+  align-items: flex-start;
+  /* margin: 1rem 0rem;
+  cursor: pointer;
+  width: 100%;
+  height: fit-content;
+  padding: 0.3rem; */
+}
+main .playlistsContainer .playlistSongs :hover{
+  color: #faa9f9;
+}
+main .playlistsContainer h3{
+  margin: 0.3rem;
+}
+/* Dark mode styling */
+.PlayListDark nav {
+  display: flex;
+  align-items: center;
+  padding: 0.6rem;
+  margin-bottom: 1rem;
+  background-color: rgb(58, 52, 52);
+  color: white;
+  
+}
+.PlayListDark .AddPlaylist .addWrapper {
+  width: fit-content;
+  height: fit-content;
+  border-radius: 0.12rem;
+  margin-right: 0.3rem;
+  background-color: rgb(58, 52, 52);
+
+}
+.PlayListDark{
+  background-color: black;
+  height: 100vh;
+}
+.PlayListDark .AddPlaylist {
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+  padding-bottom: 2rem;
+  color: white;
+  cursor: pointer;
+}
+.PlayListDark .playlistsContainer h3{
+  color: white;
+}
