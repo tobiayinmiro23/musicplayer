@@ -1,0 +1,31 @@
+.PlayList nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.6rem;
+    margin-bottom: 1rem;
+    background-color: #f1f1f1;
+  }
+  .PlayList img {
+    width: 1.28rem;
+  }
+  .PlayList  .info:hover {
+    background: #f1f1f1;
+  }
+  .emptyPlaylist{
+    text-align: center;
+    margin-top: 4rem;
+  }
+  /* darkmode */
+  .darkMode .PlayList nav {
+    background-color: rgb(58, 52, 52);
+    color: white;
+    
+  }
+  .darkMode .PlayList .kkk{
+    background-color: black;
+    color: white;
+  }
+  .darkMode .PlayList  .info:hover {
+    background-color: rgb(58, 52, 52);
+  }

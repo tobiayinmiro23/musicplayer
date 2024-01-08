@@ -1,0 +1,71 @@
+.Search nav {
+  display: flex;
+  align-items: center;
+  padding: 0.4rem;
+  justify-content: space-between;
+  background-color: #f1f1f1;
+}
+.darkMode .Search{
+  background-color: black;
+}
+.Search img {
+  width: 1.28rem;
+  cursor: pointer;
+}
+.Search input {
+  width: 70%;
+  cursor: pointer;
+  background: none;
+  padding: 0.8rem;
+  border-radius: 0.17rem;
+  background-color: white;
+  outline: none;
+  border: none;
+}
+.Search .Songs {
+  height: 89.8vh;
+}
+.searchWrapper .kkk .wrapper {
+  margin-left: 0.6rem;
+}
+.Search .kkk {
+  overflow-y: auto;
+  
+}
+.Search .noResult{
+  margin-top: 3rem;
+  text-align: center;
+}
+/* Dark mode styling */
+.darkMode .Search nav {
+  background-color: rgb(58, 52, 52);
+}
+.darkMode .Search{
+  background-color: black;
+  height: 100vh;
+  color: white;
+
+}
+.darkMode .Search .kkk .wrapper:hover {
+  background-color: rgb(58, 52, 52);
+}
+.darkMode .Search .kkk {
+  /* height: 100%; */
+  overflow-y: auto;
+  background-color: black;
+  color: white;
+}
+.darkMode .Search input {
+  background-color: black;
+  color: white;
+}
+@media (max-width: 790px) {
+  .Search .Songs {
+    height: 90vh;
+  }
+  .Search input,
+  .darkMode .Search input {
+    background: none;
+    padding: 0.1rem 0.4rem;
+  }
+}

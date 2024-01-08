@@ -1,0 +1,96 @@
+.AllPlayLists nav {
+  display: flex;
+  align-items: center;
+  padding: 0.6rem;
+  margin-bottom: 1rem;
+  background-color: #f1f1f1;
+}
+
+.AllPlayLists nav h1 {
+  margin-left: 1.5rem;
+}
+ .AddPlaylist {
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+  cursor: pointer;
+  padding-bottom: 2rem;
+}
+.AllPlayLists .deleteBtn{
+  margin-left: 75%;
+}
+
+.white{
+  color: #f1f1f1;
+}
+.black{
+  color: black;
+}
+ .AddPlaylist .addWrapper {
+  width: fit-content;
+  height: fit-content;
+  border-radius: 0.12rem;
+  margin-right: 0.3rem;
+  background-color: #f1f1f1;
+}
+ main .playlistsContainer{
+  margin-left: 2rem;
+}
+ main .playlistsContainer .img{
+  width: 3.9rem;
+  height: 3.9rem;
+  background: linear-gradient(
+    to top right,
+    #faa9f9,
+    rgba(250, 169, 249, 0.569)
+  );
+}
+ .AddPlaylist h3:hover{
+  color:  #faa9f9;
+}
+ main .playlistsContainer .playlistSongs{
+  display: flex;
+  align-items: flex-start;
+  margin: 1rem 0rem;
+  width: 100%;
+  height: fit-content;
+  padding: 0.3rem;
+}
+ main .playlistsContainer .playlistSongsDetails{
+  display: flex;
+  align-items: flex-start;
+}
+ main .playlistSongsDetails{
+  width: 11rem;
+ }
+ main .playlistSongsDetails:hover{
+  color: #faa9f9;
+  cursor: pointer;
+}
+ main .playlistsContainer h3{
+  margin: 0.3rem;
+}
+/* Dark mode styling */
+.darkMode .AllPlayLists nav {
+  background-color: rgb(58, 52, 52);
+  color: white;
+  
+}
+.darkMode .AllPlayLists .AddPlaylist .addWrapper {
+  background-color: rgb(58, 52, 52);
+
+}
+@media (max-width: 769px) {
+ main .playlistsContainer .img{
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+  main .playlistsContainer{
+    margin-left: 0.8rem;
+  }
+}
+@media (max-width:523px){
+  .AllPlayLists .deleteBtn{
+    margin-left: auto;
+  }
+}
