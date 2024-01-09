@@ -4,7 +4,7 @@ export const allSongs=[
         song:'Closer',
         src:'../music/Closer (feat. Amanda Lindsey Cook).mp3',
         artist:'Amanda Lindsey Cook',
-        time:'2:47',
+        time:'2:40',
         id:1,
         originalId:1
     },
@@ -68,7 +68,7 @@ export const allSongs=[
         src:'../music/Esther Orji (Coza Worship)- Eh Eh Eh Ah Ah - Long Version.mp3',
         song:'Eh Eh Eh Ah Ah',
         artist:'Esther Orji',
-        time:'6:30',
+        time:'6:38',
         id:9,
         originalId:9
     },
