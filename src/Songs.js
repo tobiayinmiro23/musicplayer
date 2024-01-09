@@ -36,17 +36,17 @@ const Songs = ({nowPlaying,setisPlaying,isPlaying,playButton,pauseButton,repeatO
     let audio=document.querySelector('.audio')
     // function to show currently playing song 
     const displayPlaying=(songinfo)=>{
-        let audio=document.querySelector('.audio')
+       let audio=document.querySelector('.audio')
+        audio.setAttribute('src',songinfo.src)
+        audio.play()
+        nowPlaying(songinfo)
+        setPlaying(songinfo)
+        setisPlaying(true)
+        setplaiyingSongIdBeforePlaynext(songinfo.id)
         let currentlyPlaying=document.querySelectorAll('.NowPlaying')[0]
         let songs=document.querySelectorAll('.kkk')[0]
-        setPlaying(songinfo)
-        nowPlaying(songinfo)
-        setplaiyingSongIdBeforePlaynext(songinfo.id)
         songs.classList.add('songsWrapper')
         currentlyPlaying.classList.add('block')
-        audio.setAttribute('src',songinfo.src)
-        setisPlaying(true)
-        audio.play()
     }
     useEffect(()=>{
         if(repeatOn){
