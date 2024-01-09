@@ -19,7 +19,7 @@ const NewPlaylist = ({page,fisrtPlayListSongId,DarkMode,getCurrentPlaylist}) => 
         return item  === playlistName 
     })
       // if the playlist name is empty
-        if(  playlistName ===''  ){
+        if(  playlistName.trim() ===''  ){
             handleEmptyPlaylist()
         }else if(a?.length === 0){
             sessionStorage.setItem(playlistName,JSON.stringify([]))
