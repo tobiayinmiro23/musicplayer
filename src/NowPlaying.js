@@ -14,7 +14,7 @@ import SkipPreviousIcon from '@mui/icons-material/SkipPrevious';
 import SkipNextIcon from '@mui/icons-material/SkipNext';
 import ShuffleOnIcon from '@mui/icons-material/ShuffleOn';
 
-function NowPlaying({musicInfo,setisPlaying,isPlaying,playButton,pauseButton,playNextSongIndex,repeatOnButton,repeatOfButton,setshuffleOn,shuffleOn,setrepeatOn,repeatOn,playnextOn,setplaynextOn,plaiyingSongIdBeforePlaynext,setplayNextSongIndex,playnext,handlePlayNext,audiosCurrentTime,handleAudiosCurrentTime,from,HandleNowPlaying,setfirstPlayListSongId,handleAllSongs,songs,page,DarkMode}) {
+function NowPlaying({musicInfo,audiosCurrentTime,handleAudiosCurrentTime,setisPlaying,isPlaying,playButton,pauseButton,playNextSongIndex,repeatOnButton,repeatOfButton,setshuffleOn,shuffleOn,setrepeatOn,repeatOn,playnextOn,setplaynextOn,plaiyingSongIdBeforePlaynext,setplayNextSongIndex,playnext,handlePlayNext,from,HandleNowPlaying,setfirstPlayListSongId,handleAllSongs,songs,page,DarkMode}) {
     const [playlist, setplaylist] = useState(false)
     let data= JSON.parse(sessionStorage.getItem('playlistNames')) 
     const [playlists, setplaylists] = useState(data)
