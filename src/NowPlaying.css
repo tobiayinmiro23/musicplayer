@@ -162,6 +162,10 @@
 .NowPlaying  main .playlistsContainer{
   cursor: pointer;
 }
+.NowPlaying .progressContainer, 
+.NowPlaying .progress {
+  height: 0.35rem;
+}
 /* Dark mode style */
 .darkMode .NowPlaying nav {
   background-color: rgb(58, 52, 52);
@@ -264,7 +268,7 @@
     margin-right: 3rem;
   }
    main .musicButton .controlBtn{
-    font-size: 2.2rem;
+    /* font-size: 2.2rem; */
   }
   .repeat,
   .shuffle {
@@ -342,7 +346,7 @@
     margin-bottom: -7px !important;
   }
    main .musicButton .controlBtn{
-    font-size: 2rem ;
+    /* font-size: 2rem ; */
   }
   .NowPlaying main .musicButton{
     margin-top: 2rem;
