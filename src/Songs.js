@@ -68,7 +68,7 @@ const Songs = ({nowPlaying,setisPlaying,isPlaying,playButton,pauseButton,repeatO
           removeOptions() 
         }
 
-    //function for the next button 
+   //function for the next button 
     const Next=()=>{
     let audio=document.querySelector('.audio')
     setisPlaying(true)
@@ -79,10 +79,10 @@ const Songs = ({nowPlaying,setisPlaying,isPlaying,playButton,pauseButton,repeatO
                 return item.originalId === id
             })
             result.map(item=>{
-                setPlaying(item)
                 audio.setAttribute('src',item.src)
+                audio.play()
+                setPlaying(item)
             })
-            audio.play()
             setplayNextSongIndex(playNextSongIndex + 1)
             // if the play next songs have all been played, set currently playing song to the id of the song before the playnext button was clicked
                 if(result.length === 0 ){
@@ -91,10 +91,10 @@ const Songs = ({nowPlaying,setisPlaying,isPlaying,playButton,pauseButton,repeatO
                         return item.id === id
                     })
                     result.map(item=>{
-                        setPlaying(item)
                         audio.setAttribute('src',item.src) 
+                        audio.play()
+                        setPlaying(item)
                     })
-                    audio.play()
                     handlePlayNext([])
                     setplaynextOn(false)
                     setplayNextSongIndex(1)
@@ -107,10 +107,10 @@ const Songs = ({nowPlaying,setisPlaying,isPlaying,playButton,pauseButton,repeatO
                     return item.id === id
                 })
                 result.map(item=>{
-                    setPlaying(item)
                     audio.setAttribute('src',item.src)
+                    audio.play()
+                    setPlaying(item)
                 })
-                audio.play()
         }else{
             // if neither the shuffle nor the playnext is clicked
             let id=Playing.id + 1
@@ -119,10 +119,10 @@ const Songs = ({nowPlaying,setisPlaying,isPlaying,playButton,pauseButton,repeatO
                     return item.id === id
                 })
                     result.map(item=>{
-                        setPlaying(item)
                         audio.setAttribute('src',item.src)
+                        audio.play()
+                        setPlaying(item)
                     })
-                    audio.play()
         }
     }
  
@@ -135,12 +135,11 @@ const Songs = ({nowPlaying,setisPlaying,isPlaying,playButton,pauseButton,repeatO
                     return item.id === id
                 })
                 result.map(item=>{
-                    setPlaying(item)
                     audio.setAttribute('src',item.src)
+                    audio.play()
+                    setPlaying(item)
                 })
-                audio.play()
-    }
-   
+    }  
     // function to remove currently playing song 
     const cancelPlaying=()=>{
         let currentlyPlaying=document.querySelectorAll('.NowPlaying')[0]
