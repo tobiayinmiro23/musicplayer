@@ -20,7 +20,7 @@ function NowPlaying({musicInfo,audiosCurrentTime,handleAudiosCurrentTime,setisPl
     const [playlists, setplaylists] = useState(data)
     const [successfullyAddedSongToPlaylist, setsuccessfullyAddedSongToPlaylist] = useState(false)
     const [currentMinutes, setcurrentMinutes] = useState(0)
-    const [currentSecond, setcurrentSecond] = useState('0:00')
+    const [currentSecond, setcurrentSecond] = useState(0)
     const [durationInMinutes, setdurationInMinutes] = useState(0)
     const [durationInSecond, setdurationInSecond] = useState(0)
     let audio=document.querySelector('.audio')
