@@ -36,7 +36,7 @@ const Songs = ({nowPlaying,setisPlaying,isPlaying,playButton,pauseButton,repeatO
     let audio=document.querySelector('.audio')
     // function to show currently playing song 
     const displayPlaying=(songinfo)=>{
-       let audio=document.querySelector('.audio')
+        let audio=document.querySelector('.audio')
         audio.setAttribute('src',songinfo.src)
         audio.play()
         nowPlaying(songinfo)
@@ -47,6 +47,7 @@ const Songs = ({nowPlaying,setisPlaying,isPlaying,playButton,pauseButton,repeatO
         let songs=document.querySelectorAll('.kkk')[0]
         songs.classList.add('songsWrapper')
         currentlyPlaying.classList.add('block')
+       
     }
     useEffect(()=>{
         if(repeatOn){
@@ -68,7 +69,7 @@ const Songs = ({nowPlaying,setisPlaying,isPlaying,playButton,pauseButton,repeatO
           removeOptions() 
         }
 
-   //function for the next button 
+    //function for the next button 
     const Next=()=>{
     let audio=document.querySelector('.audio')
     setisPlaying(true)
@@ -78,11 +79,9 @@ const Songs = ({nowPlaying,setisPlaying,isPlaying,playButton,pauseButton,repeatO
             let result=allsongs.filter(item=>{
                 return item.originalId === id
             })
-            result.map(item=>{
-                audio.setAttribute('src',item.src)
-                audio.play()
-                setPlaying(item)
-            })
+            audio.setAttribute('src',result[0].src)
+            audio.play()
+            setPlaying(result[0])
             setplayNextSongIndex(playNextSongIndex + 1)
             // if the play next songs have all been played, set currently playing song to the id of the song before the playnext button was clicked
                 if(result.length === 0 ){
@@ -90,11 +89,9 @@ const Songs = ({nowPlaying,setisPlaying,isPlaying,playButton,pauseButton,repeatO
                     let result=allsongs.filter(item=>{
                         return item.id === id
                     })
-                    result.map(item=>{
-                        audio.setAttribute('src',item.src) 
-                        audio.play()
-                        setPlaying(item)
-                    })
+                    audio.setAttribute('src',result[0].src)
+                    audio.play()
+                    setPlaying(result[0])
                     handlePlayNext([])
                     setplaynextOn(false)
                     setplayNextSongIndex(1)
@@ -106,11 +103,9 @@ const Songs = ({nowPlaying,setisPlaying,isPlaying,playButton,pauseButton,repeatO
                 let result=allsongs.filter(item=>{
                     return item.id === id
                 })
-                result.map(item=>{
-                    audio.setAttribute('src',item.src)
-                    audio.play()
-                    setPlaying(item)
-                })
+                audio.setAttribute('src',result[0].src)
+                audio.play()
+                setPlaying(result[0])
         }else{
             // if neither the shuffle nor the playnext is clicked
             let id=Playing.id + 1
@@ -118,11 +113,9 @@ const Songs = ({nowPlaying,setisPlaying,isPlaying,playButton,pauseButton,repeatO
                 let result=allsongs.filter(item=>{
                     return item.id === id
                 })
-                    result.map(item=>{
-                        audio.setAttribute('src',item.src)
-                        audio.play()
-                        setPlaying(item)
-                    })
+                audio.setAttribute('src',result[0].src)
+                audio.play()
+                setPlaying(result[0])
         }
     }
  
@@ -134,12 +127,11 @@ const Songs = ({nowPlaying,setisPlaying,isPlaying,playButton,pauseButton,repeatO
                 let result=allsongs.filter(item=>{
                     return item.id === id
                 })
-                result.map(item=>{
-                    audio.setAttribute('src',item.src)
-                    audio.play()
-                    setPlaying(item)
-                })
-    }  
+                audio.setAttribute('src',result[0].src)
+                audio.play()
+                setPlaying(result[0])
+    }
+   
     // function to remove currently playing song 
     const cancelPlaying=()=>{
         let currentlyPlaying=document.querySelectorAll('.NowPlaying')[0]
