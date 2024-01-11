@@ -14,7 +14,7 @@ import SkipPreviousIcon from '@mui/icons-material/SkipPrevious';
 import SkipNextIcon from '@mui/icons-material/SkipNext';
 import ShuffleOnIcon from '@mui/icons-material/ShuffleOn';
 
-function NowPlaying({musicInfo,audiosCurrentTime,handleAudiosCurrentTime,setisPlaying,isPlaying,playButton,pauseButton,playNextSongIndex,repeatOnButton,repeatOfButton,setshuffleOn,shuffleOn,setrepeatOn,repeatOn,playnextOn,setplaynextOn,plaiyingSongIdBeforePlaynext,setplayNextSongIndex,playnext,handlePlayNext,from,HandleNowPlaying,setfirstPlayListSongId,handleAllSongs,songs,page,DarkMode}) {
+function NowPlaying({musicInfo,audiosCurrentTime,setisPlaying,isPlaying,playButton,pauseButton,playNextSongIndex,repeatOnButton,repeatOfButton,setshuffleOn,shuffleOn,setrepeatOn,repeatOn,playnextOn,setplaynextOn,plaiyingSongIdBeforePlaynext,setplayNextSongIndex,playnext,handlePlayNext,handleAudiosCurrentTime,from,HandleNowPlaying,setfirstPlayListSongId,handleAllSongs,songs,page,DarkMode}) {
     const [playlist, setplaylist] = useState(false)
     let data= JSON.parse(sessionStorage.getItem('playlistNames')) 
     const [playlists, setplaylists] = useState(data)
@@ -63,11 +63,9 @@ function NowPlaying({musicInfo,audiosCurrentTime,handleAudiosCurrentTime,setisPl
                     let result=songs.filter(item=>{
                         return item.originalId === id
                     })
-                    result.map(item=>{
-                    HandleNowPlaying(item)
-                        audio.setAttribute('src',item.src)
-                    })
+                    audio.setAttribute('src',result[0].src)
                     audio.play()
+                    HandleNowPlaying(result[0])
                     setplayNextSongIndex(playNextSongIndex + 1)
                     // if the play next songs have all been played, set currently playing song to the id of the song before the playnext button was clicked
                         if(result.length === 0 ){
@@ -75,14 +73,12 @@ function NowPlaying({musicInfo,audiosCurrentTime,handleAudiosCurrentTime,setisPl
                             let result=songs.filter(item=>{
                                 return item.id === id
                             })
-                            result.map(item=>{
-                                HandleNowPlaying(item)
-                                audio.setAttribute('src',item.src) 
-                            })
+                            audio.setAttribute('src',result[0].src)
+                            audio.play()
+                            HandleNowPlaying(result[0])
                             handlePlayNext([])
                             setplaynextOn(false)
                             setplayNextSongIndex(1)
-                                audio.play()
                         }
                 //if the shuffle button is on
                 }else if(shuffleOn){
@@ -91,22 +87,19 @@ function NowPlaying({musicInfo,audiosCurrentTime,handleAudiosCurrentTime,setisPl
                 let result=songs.filter(item=>{
                     return item.id === id
                 })
-                result.map(item=>{
-                    HandleNowPlaying(item)
-                    audio.setAttribute('src',item.src)
-                })
+                audio.setAttribute('src',result[0].src)
                 audio.play()
+                HandleNowPlaying(result[0])
         }else{
             let id=musicInfo.id + 1
             if (id > songs.length)return
                 let result=songs.filter(item=>{
                     return item.id === id
                 })
-                result.map(item=>{
-                    HandleNowPlaying(item)
-                    audio.setAttribute('src',item.src)
-                })
+                audio.setAttribute('src',result[0].src)
                 audio.play()
+                HandleNowPlaying(result[0])
+               
         }
     }
     // function for the previous button
@@ -118,11 +111,9 @@ function NowPlaying({musicInfo,audiosCurrentTime,handleAudiosCurrentTime,setisPl
             let result=songs.filter(item=>{
                 return item.id === id
             })
-            result.map(item=>{
-                HandleNowPlaying(item)
-                audio.setAttribute('src',item.src)
-            })
+            audio.setAttribute('src',result[0].src)
             audio.play()
+            HandleNowPlaying(result[0])
     }
 
     // function to display playsists 
