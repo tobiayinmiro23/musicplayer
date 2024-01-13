@@ -554,7 +554,9 @@
     width: 80%;
     line-height: 1.1rem;
   }
-  .info:hover {
+  .Songs .info:hover,
+  .darkMode .Songs .info:hover 
+  {
     background: none;
   }
   .Songs .NowPlayinginfo {
