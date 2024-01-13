@@ -58,29 +58,30 @@ function NowPlaying({musicInfo,audiosCurrentTime,setisPlaying,isPlaying,playButt
         let audio=document.querySelector('.audio')
         setisPlaying(true)
         if(playnextOn){
-            // if there are songs in the play next queue
-                    let id=playnext[playnext.length-playNextSongIndex]
-                    let result=songs.filter(item=>{
-                        return item.originalId === id
-                    })
-                    audio.setAttribute('src',result[0].src)
-                    audio.play()
-                    HandleNowPlaying(result[0])
-                    setplayNextSongIndex(playNextSongIndex + 1)
-                    // if the play next songs have all been played, set currently playing song to the id of the song before the playnext button was clicked
-                        if(result.length === 0 ){
-                            let id=plaiyingSongIdBeforePlaynext + 1
-                            let result=songs.filter(item=>{
-                                return item.id === id
-                            })
-                            audio.setAttribute('src',result[0].src)
-                            audio.play()
-                            HandleNowPlaying(result[0])
-                            handlePlayNext([])
-                            setplaynextOn(false)
-                            setplayNextSongIndex(1)
-                        }
-                //if the shuffle button is on
+            let id=playnext[playnext.length-playNextSongIndex]
+                let result=songs.filter(item=>{
+                    return item.originalId === id
+                })
+             // if the play next songs have all been played, set currently playing song to the id of the song before the playnext button was clicked
+             if(result.length === 0 ){
+                let id=plaiyingSongIdBeforePlaynext + 1
+                let result=songs.filter(item=>{
+                    return item.id === id
+                })
+                audio.setAttribute('src',result[0].src)
+                audio.play()
+                HandleNowPlaying(result[0])
+                handlePlayNext([])
+                setplaynextOn(false)
+                setplayNextSongIndex(1)
+            }else{
+                // if there are songs in the play next queue
+                audio.setAttribute('src',result[0].src)
+                audio.play()
+                HandleNowPlaying(result[0])
+                setplayNextSongIndex(playNextSongIndex + 1)
+            }
+            //if the shuffle button is on
                 }else if(shuffleOn){
             let id=Math.floor(Math.random(16) * songs.length)
             if (id > songs.length)return
