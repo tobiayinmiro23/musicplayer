@@ -166,6 +166,23 @@
 .NowPlaying .progress {
   height: 0.35rem;
 }
+.round{
+  width: 5rem;
+  height: 5rem;
+  border: 3px solid none;
+  border-top:4px solid rgb(238, 185, 194);
+  margin: auto;
+  border-radius: 50%;
+  animation: round  1250ms 16s both;
+}
+@keyframes round {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 /* Dark mode style */
 .darkMode .NowPlaying nav {
   background-color: rgb(58, 52, 52);
