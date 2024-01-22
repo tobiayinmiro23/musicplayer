@@ -110,6 +110,7 @@ useEffect(()=>{
     }
     // function for the previous button
     const Back=()=>{
+        setcanplay(false)
         let audio=document.querySelector('.audio')
         setisPlaying(true)
         let id=musicInfo.id - 1
