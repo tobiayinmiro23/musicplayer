@@ -60,8 +60,8 @@ function NowPlaying({musicInfo,audiosCurrentTime,setisPlaying,isPlaying,playButt
         setcanplay(false)
         let audio=document.querySelector('.audio')
         // audio.onloadstart=console.log('ready')
-        // audio.ondurationchange=console.log('ready')
-        audio.oncanplay=setcanplay(true)
+        audio.ondurationchange=setcanplay(true)
+        // audio.oncanplay=setcanplay(true)
         setisPlaying(true)
         if(playnextOn){
             let id=playnext[playnext.length-playNextSongIndex]
