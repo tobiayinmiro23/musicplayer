@@ -23,14 +23,16 @@ function NowPlaying({musicInfo,audiosCurrentTime,setisPlaying,isPlaying,playButt
     const [currentSecond, setcurrentSecond] = useState(0)
     const [durationInMinutes, setdurationInMinutes] = useState(0)
     const [durationInSecond, setdurationInSecond] = useState(0)
+    const [canplay, setcanplay] = useState(false)
     let audio=document.querySelector('.audio')
+    
     // to ensure the seek time in the song component is same with the now playing component
     useEffect(()=>{
         let audio=document.querySelector('.audio')
         audio.setAttribute('src',musicInfo.src)
         audio.currentTime=audiosCurrentTime
         if(isPlaying)audio.play()
-
+        setcanplay(true)
         if(repeatOn){
             let audio=document.querySelector('.audio')
             audio.loop=true
@@ -55,7 +57,11 @@ function NowPlaying({musicInfo,audiosCurrentTime,setisPlaying,isPlaying,playButt
 
     // function for the skip button
     const Next=()=>{
+        setcanplay(false)
         let audio=document.querySelector('.audio')
+        // audio.onloadstart=console.log('ready')
+        // audio.ondurationchange=console.log('ready')
+        audio.oncanplay=setcanplay(true)
         setisPlaying(true)
         if(playnextOn){
             let id=playnext[playnext.length-playNextSongIndex]
@@ -81,7 +87,8 @@ function NowPlaying({musicInfo,audiosCurrentTime,setisPlaying,isPlaying,playButt
                 HandleNowPlaying(result[0])
                 setplayNextSongIndex(playNextSongIndex + 1)
             }
-            //if the shuffle button is on
+           
+                //if the shuffle button is on
                 }else if(shuffleOn){
             let id=Math.floor(Math.random(16) * songs.length)
             if (id > songs.length)return
@@ -314,6 +321,9 @@ function NowPlaying({musicInfo,audiosCurrentTime,setisPlaying,isPlaying,playButt
                 </div>
                 <div className="play">
                     {
+                        canplay ?
+                        <div>
+                            {
                             isPlaying 
                             ?
                             <div onClick={pauseButton}>
@@ -328,6 +338,11 @@ function NowPlaying({musicInfo,audiosCurrentTime,setisPlaying,isPlaying,playButt
                                 </IconButton>
                             </div>
                         }
+                        </div>
+
+                        :
+                        <div className="round"></div>
+                    }
                 </div>
                 <div className="forward" onClick={Next}>
                     <IconButton>
