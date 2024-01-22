@@ -174,7 +174,7 @@
   border-top:4px solid rgb(238, 185, 194);
   margin: auto;
   border-radius: 50%;
-  animation: round  1250ms 16s both;
+  animation: round  1250ms infinite both;
 }
 @keyframes round {
   0% {
