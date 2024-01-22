@@ -54,14 +54,12 @@ function NowPlaying({musicInfo,audiosCurrentTime,setisPlaying,isPlaying,playButt
             }
         handleOptions()
         }
-
+useEffect(()=>{
+    setcanplay(true)
+},[durationInMinutes && durationInSecond])
     // function for the skip button
     const Next=()=>{
         setcanplay(false)
-        let audio=document.querySelector('.audio')
-        // audio.onloadstart=console.log('ready')
-        audio.ondurationchange=setcanplay(true)
-        // audio.oncanplay=setcanplay(true)
         setisPlaying(true)
         if(playnextOn){
             let id=playnext[playnext.length-playNextSongIndex]
