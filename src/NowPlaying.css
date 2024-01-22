@@ -166,10 +166,11 @@
 .NowPlaying .progress {
   height: 0.35rem;
 }
+/* anime */
 .round{
-  width: 5rem;
-  height: 5rem;
-  border: 3px solid none;
+  width: 4rem;
+  height: 4rem;
+  border: 3px solid #f1f1f1;
   border-top:4px solid rgb(238, 185, 194);
   margin: auto;
   border-radius: 50%;
@@ -188,6 +189,10 @@
   background-color: rgb(58, 52, 52);
   color: white;
 
+}
+.darkMode .round{
+  border: 3px solid rgb(58, 52, 52);
+  border-top:4px solid rgb(238, 185, 194);
 }
 .darkMode .NowPlaying .musicInfo h3 {
  color: white;
