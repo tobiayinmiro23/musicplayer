@@ -32,6 +32,7 @@ function NowPlaying({musicInfo,audiosCurrentTime,setisPlaying,isPlaying,playButt
         audio.setAttribute('src',musicInfo.src)
         audio.currentTime=audiosCurrentTime
         if(isPlaying)audio.play()
+        audio.oncanplay=setcanplay(true)
         // if(durationInMinutes !=0 && durationInSecond !=0)setcanplay(true)
         if(repeatOn){
             let audio=document.querySelector('.audio')
