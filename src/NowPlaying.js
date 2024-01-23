@@ -24,6 +24,7 @@ function NowPlaying({musicInfo,audiosCurrentTime,setisPlaying,isPlaying,playButt
     const [durationInMinutes, setdurationInMinutes] = useState(0)
     const [durationInSecond, setdurationInSecond] = useState(0)
     const [canplay, setcanplay] = useState(false)
+    const [a,seta]=useState(false)
     let audio=document.querySelector('.audio')
     
     // to ensure the seek time in the song component is same with the now playing component
@@ -32,7 +33,10 @@ function NowPlaying({musicInfo,audiosCurrentTime,setisPlaying,isPlaying,playButt
         audio.setAttribute('src',musicInfo.src)
         audio.currentTime=audiosCurrentTime
         if(isPlaying)audio.play()
-        audio.oncanplay=setcanplay(true)
+        audio.oncanplay=()=>{
+            seta(true)
+            setcanplay(true)
+        }
         // if(durationInMinutes !=0 && durationInSecond !=0)setcanplay(true)
         if(repeatOn){
             let audio=document.querySelector('.audio')
@@ -56,7 +60,7 @@ function NowPlaying({musicInfo,audiosCurrentTime,setisPlaying,isPlaying,playButt
         handleOptions()
         }
 useEffect(()=>{
-    setcanplay(true)
+  if(a) setcanplay(true)
 },[durationInMinutes && durationInSecond])
     // function for the skip button
     const Next=()=>{
