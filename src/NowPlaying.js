@@ -161,6 +161,7 @@ useEffect(()=>{
     }
       // function to delete a song
       const deleteSong=(musicInfo)=>{
+          setcanplay(false)
         // i delete the song
         let newSongs=songs.filter(item=>{
             return item.id !== musicInfo
