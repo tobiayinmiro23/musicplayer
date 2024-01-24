@@ -164,7 +164,7 @@
 }
 .NowPlaying .progressContainer, 
 .NowPlaying .progress {
-  height: 0.45rem;
+  height: 0.5rem;
 }
 /* anime */
 .round{
